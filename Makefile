@@ -22,7 +22,7 @@ install: go-get
 
 ## start: Start in development mode. Auto-starts when code changes.
 start:
-	@bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch run='make compile start-server'"
+	@bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch run='make clean compile start-server'"
 
 ## stop: Stop development mode.
 stop: stop-server
@@ -56,9 +56,10 @@ exec:
 
 ## clean: Clean build files. Runs `go clean` internally.
 clean:
-	@(MAKEFILE) go-clean
+	@-rm $(GOBIN)/$(PROJECTNAME) 2> /dev/null
+	@-$(MAKE) go-clean
 
-go-compile: go-clean go-get go-build
+go-compile: go-get go-build
 
 go-build:
 	@echo "  >  Building binary..."
