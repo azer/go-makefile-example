@@ -8,6 +8,7 @@ Run following commands to try it out:
 
 * git clone https://github.com/azer/go-makefile-example.git
 * cd go-makefile-example
+* go get github.com/azer/yolo (needed for file watch)
 * make install
 * make start
 
