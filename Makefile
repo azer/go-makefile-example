@@ -22,7 +22,7 @@ install: go-get
 
 ## start: Start in development mode. Auto-starts when code changes.
 start:
-	@bash -c "trap 'make stop' EXIT; $(MAKE) compile start-server watch run='make clean compile start-server'"
+	@bash -c "trap 'make stop' EXIT; $(MAKE) clean compile start-server watch run='make clean compile start-server'"
 
 ## stop: Stop development mode.
 stop: stop-server
