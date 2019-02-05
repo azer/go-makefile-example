@@ -1,4 +1,4 @@
-include .env
+-include .env
 
 PROJECTNAME=$(shell basename "$(PWD)")
 
