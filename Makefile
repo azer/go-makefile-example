@@ -1,18 +1,18 @@
 include .env
 
-PROJECTNAME=$(shell basename "$(PWD)")
+PROJECTNAME := $(shell basename "$(PWD)")
 
 # Go related variables.
-GOBASE=$(shell pwd)
-GOPATH=$(GOBASE)/vendor:$(GOBASE)
-GOBIN=$(GOBASE)/bin
-GOFILES=$(wildcard *.go)
+GOBASE := $(shell pwd)
+GOPATH := $(GOBASE)/vendor:$(GOBASE)
+GOBIN := $(GOBASE)/bin
+GOFILES := $(wildcard *.go)
 
 # Redirect error output to a file, so we can show it in development mode.
-STDERR=/tmp/.$(PROJECTNAME)-stderr.txt
+STDERR := /tmp/.$(PROJECTNAME)-stderr.txt
 
 # PID file will keep the process id of the server
-PID=/tmp/.$(PROJECTNAME).pid
+PID := /tmp/.$(PROJECTNAME).pid
 
 # Make is verbose in Linux. Make it silent.
 MAKEFLAGS += --silent
