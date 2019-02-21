@@ -1,6 +1,6 @@
 -include .env
 
-VERSION := 0.1.0
+VERSION := $(shell git describe --tags)
 BUILD := $(shell git rev-parse --short HEAD)
 PROJECTNAME := $(shell basename "$(PWD)")
 
