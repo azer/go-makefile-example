@@ -1,6 +1,6 @@
 # go-makefile-example
 
-Example project for the Makefile explained in [A Good Makefile for Go](http://azer.bike/journal/a-good-makefile-for-go/) blog post.
+Example project for the Makefile explained in [A Good Makefile for Go](https://kodfabrik.com/journal/a-good-makefile-for-go/) blog post.
 
 ## Setup
 
