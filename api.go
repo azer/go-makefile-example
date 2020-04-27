@@ -1,9 +1,9 @@
 package main
 
 import (
+	"github.com/azer/go-makefile-example/src/hello-world"
 	"github.com/joho/godotenv"
 	"github.com/labstack/echo"
-	"hello-world"
 	"os"
 )
 

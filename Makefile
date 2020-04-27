@@ -1,6 +1,6 @@
 -include .env
 
-VERSION := $(shell git describe --tags)
+VERSION := $(shell git describe --tags 2>/dev/null )
 BUILD := $(shell git rev-parse --short HEAD)
 PROJECTNAME := $(shell basename "$(PWD)")
 
@@ -76,7 +76,8 @@ go-generate:
 
 go-get:
 	@echo "  >  Checking if there is any missing dependencies..."
-	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go get $(get)
+	GOBIN=$(GOBIN) go get $(get)
+	GOBIN=$(GOBIN) go mod vendor
 
 go-install:
 	@GOPATH=$(GOPATH) GOBIN=$(GOBIN) go install $(GOFILES)
